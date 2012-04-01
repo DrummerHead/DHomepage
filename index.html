@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+
+<title>DHomepage</title>
+
+<meta charset='utf-8'>
+<meta name='description' content='DrummerHead&#8217;s Homepage'>
+<meta name='author' content='DrummerHead'>
+<meta name='viewport' content='width=device-width, maximum-scale=1'>
+
+<link rel='stylesheet' href='stijl.css'>
+
+</head>
+
+<body id='homepage'>
+
+
+
+
+<ol>
+  <li class='search'>
+    <form id='g'>
+      <input type='text' placeholder='Google Search'>
+      <div>
+        <button class='go' type='submit'>Go</button>
+        <button class='get' type='button'>Get</button>
+      </div>
+    </form>
+  </li>
+  <li class='search'>
+    <form id='gi'>
+      <input type='text' placeholder='Google Image Search'>
+      <div>
+        <button class='go' type='submit'>Go</button>
+        <button class='get' type='button'>Get</button>
+      </div>
+    </form>
+  </li>
+  <li class='search'>
+    <form id='d'>
+      <input type='text' placeholder='DuckDuckGo Search'>
+      <div>
+        <button class='go' type='submit'>Go</button>
+        <button class='get' type='button'>Get</button>
+      </div>
+    </form>
+  </li>
+  <li class='search'>
+    <form id='y'>
+      <input type='text' placeholder='YouTube Search'>
+      <div>
+        <button class='go' type='submit'>Go</button>
+        <button class='get' type='button'>Get</button>
+      </div>
+    </form>
+  </li>
+  <li class='search'>
+    <form id='i'>
+      <input type='text' placeholder='imgur Search'>
+      <div>
+        <button class='go' type='submit'>Go</button>
+        <button class='get' type='button'>Get</button>
+      </div>
+    </form>
+  </li>
+  <li class='search'>
+    <form id='ig'>
+      <input type='text' placeholder='imgur Google Search'>
+      <div>
+        <button class='go' type='submit'>Go</button>
+        <button class='get' type='button'>Get</button>
+      </div>
+    </form>
+  </li>
+  <li>
+    <a href='https://mail.google.com/mail/u/0/#inbox' rel='external'>Gmail</a>
+  </li>
+  <li>
+    <a href='http://news.ycombinator.com/' rel='external'>Hacker News</a>
+  </li>
+  <li>
+    <a href='http://www.reddit.com/' rel='external'>reddit</a>
+  </li>
+  <li>
+    <a href='http://www.reddit.com/r/Design+DesignPorn+gamedev+graphic_design+interface+javascript+learnprogramming+typography+usability+userexperience+web_design+webdev' rel='external'>reddit design</a>
+  </li>
+  <li>
+    <a href='http://en.wikipedia.org/wiki/Special:Random' rel='external'>Wikipedia</a>
+  </li>
+  <li>
+    <a href='http://www.alistapart.com/' rel='external'>A List Apart</a>
+  </li>
+  <li>
+    <a href='http://www.cracked.com/' rel='external'>Cracked</a>
+  </li>
+  <li>
+    <a href='https://twitter.com/' rel='external'>Twitter</a>
+  </li>
+</ol>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
+
+<script>
+
+var $forms = $('form'),
+  $inputs = $('input'),
+  query,
+  fId;
+
+  $inputs.val('').focus(function(){
+    $(this).select();
+  });
+
+var engines = {
+  g : function(q) {
+    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0';
+  },
+  gi : function(q) {
+    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0';
+  },
+  d : function(q) {
+    return 'http://duckduckgo.com/?q=' + q;
+  },
+  y : function(q) {
+    return 'http://www.youtube.com/results?search_query=' + q;
+  },
+  i : function(q) {
+    return 'http://imgur.com/gallery?q=' + q;
+  },
+  ig : function(q) {
+    return 'https://www.google.com/search?q=site:http://imgur.com/+' + q + '&safe=off&pws=0';
+  }
+}
+
+var makeUrl = function(q, id){
+  var qSafe = q.replace(/ /g, '+'),
+    urlResult = engines[id](qSafe);
+  return urlResult;
+}
+
+var collector = function(selected){
+  query = selected.find('input').val();
+  fId = selected.attr('id');
+  return makeUrl(query, fId);
+}
+
+$('.search').on('submit', 'form', function(i){
+  i.preventDefault();
+  window.location.href = collector($(this));
+});
+
+$('.search').on('click', '.get', function(i){
+  var $jug = $(this).parents('form'),
+    stringo = collector($jug);
+  $jug.find('input').val(stringo);
+});
+
+</script>
+
+
+
+
+</body>
+</html>
