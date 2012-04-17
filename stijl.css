@@ -63,6 +63,16 @@ input {
 input:focus {
   color: #eee;
 }
+label {
+  position: absolute;
+  right: -7em;
+  top: 0;
+  font-size: .4em;
+}
+input[type='checkbox'] {
+  width: auto;
+  height: auto;
+}
 ::-webkit-input-placeholder {
   color: #333;
   text-indent: .4em;
@@ -71,6 +81,7 @@ form div {
   float: right;
   width: 10%;
   height: 99%;
+  position: relative;
 }
 button {
   width: 99%;
