@@ -111,10 +111,10 @@
 
 <script>
 
-var $forms = $('form'),
-  $inputs = $('input'),
-  query,
-  fId;
+var $forms = $('form')
+  , $inputs = $('input')
+  , query
+  , fId
 
   $inputs.val('').focus(function(){
     $(this).select();
@@ -142,14 +142,15 @@ var engines = {
 }
 
 var makeUrl = function(q, id){
-  var qSafe = q.replace(/ /g, '+'),
-    urlResult = engines[id](qSafe);
+  var qNoAmp = q.replace(/&/g, '%26')
+    , qNoSpace = qNoAmp.replace(/ /g, '+')
+    urlResult = engines[id](qNoSpace);
   return urlResult;
 }
 
 var collector = function(selected){
-  query = selected.find('input').val();
-  fId = selected.attr('id');
+  var query = selected.find('input').val()
+    , fId = selected.attr('id')
   return makeUrl(query, fId);
 }
 
@@ -159,8 +160,8 @@ $('.search').on('submit', 'form', function(i){
 });
 
 $('.search').on('click', '.get', function(i){
-  var $jug = $(this).parents('form'),
-    stringo = collector($jug);
+  var $jug = $(this).parents('form')
+    , stringo = collector($jug)
   $jug.find('input').val(stringo);
 });
 
