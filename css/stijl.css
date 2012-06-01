@@ -120,6 +120,20 @@ a:focus {
   color: #777;
 }
 
+@media (max-width: 1280px) {
+  a,
+  input,
+  button {
+    border-color: #444;
+    color: #444;
+    background-color: #070707;
+  }
+  a:hover {
+    background-color: #111;
+    color: #666;
+  }
+}
+
 @media (max-width: 1170px) {
   ol {
     width: 97%;
