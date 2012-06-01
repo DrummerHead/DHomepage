@@ -8,16 +8,18 @@ var $forms = $('form')
   , query
   , fId
 
+
 $inputs.focus(function(){
   $(this).select();
 });
+
 
 var engines = {
   g : function(q) {
     return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0';
   },
-  gi : function(q) {
-    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0';
+  gi : function(q, mod) {
+    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0' + (mod ? '&tbs=imgo:1' : '');
   },
   d : function(q) {
     return 'http://duckduckgo.com/?q=' + q;
@@ -33,26 +35,31 @@ var engines = {
   }
 }
 
-var makeUrl = function(q, id){
+
+var makeUrl = function(q, id, mod){
   var safeUrl = q
         .replace(/&/g, '%26')
         .replace(/ /g, '+')
-    , urlResult = engines[id](safeUrl)
+    , urlResult = engines[id](safeUrl, mod)
 
   return urlResult;
 }
 
-var collector = function(selected){
-  var query = selected.find('input').val()
-    , fId = selected.attr('id')
 
-  return makeUrl(query, fId);
+var collector = function(selected){
+  var fId = selected.attr('id')
+    , query = selected.find('input[type="text"]').val()
+    , mod = selected.find('input[type="checkbox"]:checked').length
+
+  return makeUrl(query, fId, mod);
 }
+
 
 $('.search').on('submit', 'form', function(i){
   i.preventDefault();
   window.location.href = collector($(this));
 });
+
 
 $('.search').on('click', '.get', function(i){
   var $jug = $(this).parents('form')
