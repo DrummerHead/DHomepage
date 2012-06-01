@@ -9,7 +9,7 @@
 <meta name='author' content='DrummerHead'>
 <meta name='viewport' content='width=device-width, maximum-scale=1'>
 
-<link rel='stylesheet' href='stijl.css'>
+<link rel='stylesheet' href='css/stijl.css'>
 
 </head>
 
@@ -96,7 +96,7 @@
     <a href='http://www.alistapart.com/' rel='external'>A List Apart</a>
   </li>
   <li>
-    <a href='http://www.cracked.com/' rel='external'>Cracked</a>
+    <a href='http://ffffound.com/' rel='external'>ffffound</a>
   </li>
   <li>
     <a href='https://twitter.com/' rel='external'>Twitter</a>
@@ -106,69 +106,9 @@
 
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
 <script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
-
-<script>
-
-var $forms = $('form')
-  , $inputs = $('input')
-  , query
-  , fId
-
-  $inputs.val('').focus(function(){
-    $(this).select();
-  });
-
-var engines = {
-  g : function(q) {
-    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0';
-  },
-  gi : function(q) {
-    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0';
-  },
-  d : function(q) {
-    return 'http://duckduckgo.com/?q=' + q;
-  },
-  y : function(q) {
-    return 'http://www.youtube.com/results?search_query=' + q;
-  },
-  i : function(q) {
-    return 'http://imgur.com/gallery?q=' + q;
-  },
-  ig : function(q) {
-    return 'https://www.google.com/search?q=site:http://imgur.com/+' + q + '&safe=off&pws=0';
-  }
-}
-
-var makeUrl = function(q, id){
-  var qNoAmp = q.replace(/&/g, '%26')
-    , qNoSpace = qNoAmp.replace(/ /g, '+')
-    urlResult = engines[id](qNoSpace);
-  return urlResult;
-}
-
-var collector = function(selected){
-  var query = selected.find('input').val()
-    , fId = selected.attr('id')
-  return makeUrl(query, fId);
-}
-
-$('.search').on('submit', 'form', function(i){
-  i.preventDefault();
-  window.location.href = collector($(this));
-});
-
-$('.search').on('click', '.get', function(i){
-  var $jug = $(this).parents('form')
-    , stringo = collector($jug)
-  $jug.find('input').val(stringo);
-});
-
-</script>
-
-
-
+<script src='js/gedrag.js'></script>
 
 </body>
 </html>
