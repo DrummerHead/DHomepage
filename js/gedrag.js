@@ -3,13 +3,10 @@ $(function(){
 
 
 
-var $forms = $('form')
-  , $inputs = $('input')
-  , query
-  , fId
+var $inputs = $('input')
 
 
-$inputs.focus(function(){
+$inputs.val('').focus(function(){
   $(this).select();
 });
 
@@ -55,7 +52,7 @@ var collector = function(selected){
 }
 
 
-$('.search').on('submit', 'form', function(i){
+$('.search').on('submit', 'form:not(".native")', function(i){
   i.preventDefault();
   window.location.href = collector($(this));
 });
