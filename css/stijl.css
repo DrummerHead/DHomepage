@@ -109,9 +109,10 @@ input:focus {
 a {
   display: block;
   width: 90%;
-  border: 1px solid #222;
   height: 80%;
+  border: 1px solid #222;
   padding: 5%;
+  color: #222;
   text-decoration: none;
   outline: none;
 }
@@ -189,12 +190,23 @@ button:active {
     height: 98%;
   }
 }
-@media (max-width: 477px) {
+@media (max-width: 487px) {
   li {
     width: 47%;
-    height: 15%;
+    height: 10%;
   }
   .search {
     height: 11%;
+  }
+  input {
+    width: 100%;
+  }
+  form div {
+    display: none;
+  }
+  a {
+    width: 94%;
+    height: 74%;
+    padding: 3%;
   }
 }
