@@ -1,0 +1,57 @@
+Relative colors conversion rules:
+
+
+Starting color:
+#000
+
+Type from background-color && border from parent.background-color:
+4 step up
+
+Inputs difference:
+1 step up from a.link in background-color and color
+
+Hover states modifier:
+2 step up
+
+button:active and a:focus:
+#777 for border and color
+#000 for background-color
+
+Modifier of all rules above for smaller viewports:
+1 step up for everything except root.background-color
+2 step up for borders
+
+
+Steps:
+
+#000
+#080808
+#111
+#191919
+#222
+#2a2a2a
+#333
+#3b3b3b
+#444
+#4c4c4c
+#555
+#5d5d5d
+#666
+#6e6e6e
+#777
+#7f7f7f
+#888
+#909090
+#999
+#a1a1a1
+#aaa
+#b2b2b2
+#bbb
+#c3c3c3
+#ccc
+#d4d4d4
+#ddd
+#e5e5e5
+#eee
+#f6f6f6
+#fff
