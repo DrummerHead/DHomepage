@@ -35,7 +35,11 @@ var engines = {
 
 var makeUrl = function(q, id, mod){
   var safeUrl = q
+        .replace(/%/g, '%25')
+        .replace(/#/g, '%23')
         .replace(/&/g, '%26')
+        .replace(/\+/g, '%2B')
+        .replace(/\?/g, '%3F')
         .replace(/ /g, '+')
     , urlResult = engines[id](safeUrl, mod)
 
