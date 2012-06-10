@@ -11,7 +11,7 @@ Inputs difference:
 1 step up from a.link in background-color and color
 
 Hover states modifier:
-2 step up
+2 step up for background-color, color and border
 
 button:active and a:focus:
 #777 for border and color
