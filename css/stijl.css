@@ -111,7 +111,8 @@ button:hover {
   color: #3b3b3b;
   border-color: #333;
 }
-input:focus {
+input:focus,
+button:focus {
   color: #eee;
   background-color: #000;
 }
