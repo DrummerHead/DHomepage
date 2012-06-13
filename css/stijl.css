@@ -53,6 +53,7 @@ button {
   color: #2a2a2a;
 }
 input {
+  float: left;
   width: 87%;
   height: 98%;
   margin: 0;
@@ -95,7 +96,7 @@ form div {
   position: relative;
 }
 button {
-  width: 99%;
+  width: 96%;
   height: 49%;
   margin: 0 0 6% 0;
   padding: 0;
