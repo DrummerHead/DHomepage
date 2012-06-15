@@ -40,3 +40,6 @@ Session.vim
 *.egg
 *.deb
 *.rpm
+
+#custom
+c/
