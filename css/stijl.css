@@ -65,7 +65,6 @@ input {
 label {
   position: absolute;
   width: 7em;
-  left: 100%;
   top: 100%;
   font-size: .5em;
   cursor: pointer;
@@ -81,9 +80,16 @@ label {
        -o-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
+li:nth-child(2n) label {
+  left: 100%;
+}
+li:nth-child(2n+1) label {
+  left: -940%;
+}
 input[type='checkbox'] {
   width: auto;
   height: auto;
+  float: none;
 }
 ::-webkit-input-placeholder {
   color: #2a2a2a;

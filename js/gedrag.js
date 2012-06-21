@@ -12,8 +12,8 @@ $inputs.val('').focus(function(){
 
 
 var engines = {
-  g : function(q) {
-    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0';
+  g : function(q, mod) {
+    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0' + (mod ? '&hl=es' : '');
   },
   gi : function(q, mod) {
     return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0' + (mod ? '&tbs=imgo:1' : '');
