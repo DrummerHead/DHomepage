@@ -40,7 +40,7 @@ var makeUrl = function(q, id, mod){
         .replace(/&/g, '%26')
         .replace(/\+/g, '%2B')
         .replace(/\?/g, '%3F')
-        .replace(/ /g, '+')
+        .replace(/[ _]+/g, '+')
     , urlResult = engines[id](safeUrl, mod)
 
   return urlResult;
