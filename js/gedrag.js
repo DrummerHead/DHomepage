@@ -13,10 +13,10 @@ $inputs.val('').focus(function(){
 
 var engines = {
   g : function(q, mod) {
-    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0' + (mod ? '&hl=es' : '');
+    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0&nfpr=1' + (mod ? '&hl=es' : '');
   },
   gi : function(q, mod) {
-    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0' + (mod ? '&tbs=imgo:1' : '');
+    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0&nfpr=1' + (mod ? '&tbs=imgo:1' : '');
   },
   d : function(q) {
     return 'http://duckduckgo.com/?q=' + q;
