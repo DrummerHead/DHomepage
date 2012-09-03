@@ -12,11 +12,11 @@ $inputs.val('').focus(function(){
 
 
 var engines = {
-  g : function(q, mod) {
-    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0&nfpr=1' + (mod ? '&hl=es' : '');
+  g : function(q, modAlpha) {
+    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0&nfpr=1' + (modAlpha ? '&hl=es' : '');
   },
-  gi : function(q, mod) {
-    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0&nfpr=1' + (mod ? '&tbs=imgo:1' : '');
+  gi : function(q, modAlpha, modBeta) {
+    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0&nfpr=1' + (modAlpha || modBeta ? '&tbs=' : '') + (modAlpha ? 'imgo:1,' : '') + (modBeta ? 'ift:gif,' : '');
   },
   d : function(q) {
     return 'http://duckduckgo.com/?q=' + q;
@@ -33,7 +33,7 @@ var engines = {
 }
 
 
-var makeUrl = function(q, id, mod){
+var makeUrl = function(q, id, modAlpha, modBeta){
   var safeUrl = q
         .replace(/%/g, '%25')
         .replace(/#/g, '%23')
@@ -41,7 +41,7 @@ var makeUrl = function(q, id, mod){
         .replace(/\+/g, '%2B')
         .replace(/\?/g, '%3F')
         .replace(/[ _]+/g, '+')
-    , urlResult = engines[id](safeUrl, mod)
+    , urlResult = engines[id](safeUrl, modAlpha, modBeta)
 
   return urlResult;
 }
@@ -50,9 +50,10 @@ var makeUrl = function(q, id, mod){
 var collector = function(selected){
   var fId = selected.attr('id')
     , query = selected.find('input[type="text"]').val()
-    , mod = selected.find('input[type="checkbox"]:checked').length
+    , modAlpha = selected.find('.modAlpha:checked').length
+    , modBeta = selected.find('.modBeta:checked').length
 
-  return makeUrl(query, fId, mod);
+  return makeUrl(query, fId, modAlpha, modBeta);
 }
 
 

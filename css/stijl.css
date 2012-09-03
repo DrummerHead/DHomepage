@@ -62,13 +62,10 @@ input {
   font-family: Helvetica, sans-serif;
   text-indent: 2.25%;
 }
-label {
+aside {
   position: absolute;
   width: 7em;
   top: 100%;
-  font-size: .5em;
-  cursor: pointer;
-
   -webkit-transform-origin: 0 0;
      -moz-transform-origin: 0 0;
       -ms-transform-origin: 0 0;
@@ -80,10 +77,15 @@ label {
        -o-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-li:nth-child(2n) label {
+label {
+  display: block;
+  font-size: .5em;
+  cursor: pointer;
+}
+li:nth-child(2n) aside {
   left: 100%;
 }
-li:nth-child(2n+1) label {
+li:nth-child(2n+1) aside {
   left: -940%;
 }
 input[type='checkbox'] {
