@@ -93,6 +93,10 @@ input[type='checkbox'] {
   height: auto;
   float: none;
 }
+:-moz-placeholder {
+  color: #2a2a2a !important;
+  text-indent: .4em;
+}
 ::-webkit-input-placeholder {
   color: #2a2a2a;
   text-indent: .4em;
