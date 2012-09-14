@@ -24,22 +24,22 @@ Modifier of all rules above for smaller viewports:
 
 Steps:
 
-#000
-#080808
-#111
-#191919
-#222
-#2a2a2a
-#333
-#3b3b3b
-#444
-#4c4c4c
-#555
-#5d5d5d
-#666
-#6e6e6e
-#777
-#7f7f7f
+#000     #fff
+#080808  #f6f6f6
+#111     #eee
+#191919  #e5e5e5
+#222     #ddd
+#2a2a2a  #d4d4d4
+#333     #ccc
+#3b3b3b  #c3c3c3
+#444     #bbb
+#4c4c4c  #b2b2b2
+#555     #aaa
+#5d5d5d  #a1a1a1
+#666     #999
+#6e6e6e  #909090
+#777     #888
+#7f7f7f  #7f7f7f
 #888
 #909090
 #999

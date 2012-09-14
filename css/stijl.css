@@ -191,7 +191,7 @@ button:active {
     color: #333;
     border-color: #444;
   }
-  input:focus {
+ input:focus {
     color: #eee;
     background-color: #000;
   }
@@ -225,6 +225,10 @@ button:active {
   }
 }
 @media (max-width: 487px) {
+  html {
+    background-color: #fff;
+    color: #ccc;
+  }
   li {
     width: 47%;
     height: 10%;
@@ -232,8 +236,26 @@ button:active {
   .search {
     height: 11%;
   }
+  input,
+  button {
+    border-color: #ccc;
+    background-color: #eee;
+    color: #ccc;
+  }
   input {
     width: 100%;
+  }
+  :-moz-placeholder {
+    color: #909090 !important;
+  }
+  ::-webkit-input-placeholder {
+    color: #909090;
+  }
+  input:hover,
+  button:hover {
+    background-color: #ddd;
+    color: #bbb;
+    border-color: #bbb;
   }
   form div {
     display: none;
@@ -241,6 +263,27 @@ button:active {
   a {
     width: 94%;
     height: 74%;
+    border-color: #ddd;
     padding: 3%;
+    color: #999;
+    background-color: #f6f6f6;
+  }
+  a:visited {
+    color: #999;
+  }
+  a:hover {
+    background-color: #eee;
+    color: #888;
+    border-color: #bbb;
+  }
+  input:focus {
+    color: #111;
+    background-color: #fff;
+  }
+  a:focus,
+  button:active {
+    color: #888;
+    border-color: #888;
+    background-color: #fff;
   }
 }
