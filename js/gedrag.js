@@ -35,23 +35,23 @@ var engines = {
 
 var makeUrl = function(q, id, modAlpha, modBeta){
   var safeUrl = q
-        .replace(/%/g, '%25')
-        .replace(/#/g, '%23')
-        .replace(/&/g, '%26')
-        .replace(/\+/g, '%2B')
-        .replace(/\?/g, '%3F')
-        .replace(/[ _]+/g, '+')
-    , urlResult = engines[id](safeUrl, modAlpha, modBeta)
+    .replace(/%/g, '%25')
+    .replace(/#/g, '%23')
+    .replace(/&/g, '%26')
+    .replace(/\+/g, '%2B')
+    .replace(/\?/g, '%3F')
+    .replace(/[ _]+/g, '+');
+  var urlResult = engines[id](safeUrl, modAlpha, modBeta);
 
   return urlResult;
 }
 
 
 var collector = function(selected){
-  var fId = selected.attr('id')
-    , query = selected.find('input[type="text"]').val()
-    , modAlpha = selected.find('.modAlpha:checked').length
-    , modBeta = selected.find('.modBeta:checked').length
+  var fId = selected.attr('id');
+  var query = selected.find('input[type="text"]').val();
+  var modAlpha = selected.find('.modAlpha:checked').length;
+  var modBeta = selected.find('.modBeta:checked').length;
 
   return makeUrl(query, fId, modAlpha, modBeta);
 }
@@ -64,9 +64,44 @@ $('.search').on('submit', 'form:not(".native")', function(i){
 
 
 $('.search').on('click', '.get', function(i){
-  var $jug = $(this).parents('form')
-    , stringo = collector($jug)
+  var $jug = $(this).parents('form');
+  var stringo = collector($jug);
   $jug.find('input').val(stringo);
+});
+
+
+$('.search').on('focus', 'input[type="text"]', function(i){
+  var $jug = $(this).parents('li');
+  var side = $jug.data('side');
+  var $brother;
+
+  $jug.removeClass('shrink').addClass('focus');
+
+  if(side == 'left'){
+    var $brother = $jug.next();
+  }
+  else if(side == 'right'){
+    var $brother = $jug.prev();
+  }
+
+  $brother.removeClass('focus').addClass('shrink');
+});
+
+
+$('.search').on('blur', 'input[type="text"]', function(i){
+  var $jug = $(this).parents('li');
+  var side = $jug.data('side');
+  var $brother;
+
+  if(side == 'left'){
+    var $brother = $jug.next();
+  }
+  else if(side == 'right'){
+    var $brother = $jug.prev();
+  }
+
+  $jug.removeClass('shrink focus');
+  $brother.removeClass('shrink focus');
 });
 
 

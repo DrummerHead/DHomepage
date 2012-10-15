@@ -39,6 +39,17 @@ li:nth-child(2) {
 .search {
   width: 47.6%;
   height: 12%;
+  -webkit-transition: width 1s ease-in-out;
+     -moz-transition: width 1s ease-in-out;
+      -ms-transition: width 1s ease-in-out;
+       -o-transition: width 1s ease-in-out;
+          transition: width 1s ease-in-out;
+}
+.focus {
+  width: 72.6%;
+}
+.shrink {
+  width: 22.6%;
 }
 form {
   width: 100%;
@@ -117,6 +128,7 @@ button {
   text-align: center;
   cursor: pointer;
   border-radius: 4px;
+  overflow: hidden;
 }
 input:hover,
 button:hover {
