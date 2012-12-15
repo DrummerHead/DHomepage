@@ -36,14 +36,20 @@ li:nth-child(1),
 li:nth-child(2) {
   margin-top: 2%;
 }
+li:nth-child(7) {
+  clear: both;
+}
 .search {
   width: 47.6%;
   height: 12%;
-  -webkit-transition: width 1s ease-in-out;
-     -moz-transition: width 1s ease-in-out;
-      -ms-transition: width 1s ease-in-out;
-       -o-transition: width 1s ease-in-out;
-          transition: width 1s ease-in-out;
+  -webkit-transition: width 377ms ease-in-out;
+     -moz-transition: width 377ms ease-in-out;
+      -ms-transition: width 377ms ease-in-out;
+       -o-transition: width 377ms ease-in-out;
+          transition: width 377ms ease-in-out;
+}
+.search[data-side='left'] {
+  clear: left;
 }
 .focus {
   width: 72.6%;

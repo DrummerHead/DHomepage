@@ -12,35 +12,35 @@ $inputs.val('').focus(function(){
 
 
 var engines = {
-  g : function(q, modAlpha) {
-    return 'https://www.google.com/search?q=' + q + '&safe=off&pws=0&nfpr=1' + (modAlpha ? '&hl=es' : '');
+  google : function(query, modAlpha) {
+    return 'https://www.google.com/search?q=' + query + '&safe=off&pws=0&nfpr=1' + (modAlpha ? '&hl=es' : '');
   },
-  gi : function(q, modAlpha, modBeta) {
-    return 'https://www.google.com/search?q=' + q + '&tbm=isch&safe=off&pws=0&nfpr=1' + (modAlpha || modBeta ? '&tbs=' : '') + (modAlpha ? 'imgo:1,' : '') + (modBeta ? 'ift:gif,' : '');
+  googleImages : function(query, modAlpha, modBeta) {
+    return 'https://www.google.com/search?q=' + query + '&tbm=isch&safe=off&pws=0&nfpr=1' + (modAlpha || modBeta ? '&tbs=' : '') + (modAlpha ? 'imgo:1,' : '') + (modBeta ? 'ift:gif,' : '');
   },
-  d : function(q) {
-    return 'http://duckduckgo.com/?q=' + q;
+  duckDuckGo : function(query) {
+    return 'http://duckduckgo.com/?q=' + query;
   },
-  y : function(q) {
-    return 'http://www.youtube.com/results?search_query=' + q;
+  youtube : function(query) {
+    return 'http://www.youtube.com/results?search_query=' + query;
   },
-  i : function(q) {
-    return 'http://imgur.com/gallery?q=' + q;
+  bingImages : function(query) {
+    return 'http://www.bing.com/images/search?q=' + query;
   },
-  ig : function(q) {
-    return 'https://www.google.com/search?q=site:http://imgur.com/+' + q + '&safe=off&pws=0';
-  }
+  imgur : function(query) {
+    return 'http://imgur.com/gallery?q=' + query;
+  },
 }
 
 
-var makeUrl = function(q, id, modAlpha, modBeta){
-  var safeUrl = q
+var makeUrl = function(query, id, modAlpha, modBeta){
+  var safeUrl = query
     .replace(/%/g, '%25')
     .replace(/#/g, '%23')
     .replace(/&/g, '%26')
     .replace(/\+/g, '%2B')
     .replace(/\?/g, '%3F')
-    .replace(/[ _]+/g, '+');
+    .replace(/[ ]+/g, '+');
   var urlResult = engines[id](safeUrl, modAlpha, modBeta);
 
   return urlResult;
