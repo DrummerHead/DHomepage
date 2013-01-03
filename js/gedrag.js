@@ -12,11 +12,11 @@ $inputs.val('').focus(function(){
 
 
 var engines = {
-  google : function(query, modAlpha) {
-    return 'https://www.google.com/search?q=' + query + '&safe=off&pws=0&nfpr=1' + (modAlpha ? '&hl=es' : '');
+  google : function(query, modAlpha, modBeta) {
+    return 'https://www.google.com/search?q=' + query + '&safe=off&pws=0&nfpr=1' + (modAlpha ? '&cr=countryUY' : '') + (modBeta ? '&hl=es' : '');
   },
   googleImages : function(query, modAlpha, modBeta) {
-    return 'https://www.google.com/search?q=' + query + '&tbm=isch&safe=off&pws=0&nfpr=1' + (modAlpha || modBeta ? '&tbs=' : '') + (modAlpha ? 'imgo:1,' : '') + (modBeta ? 'ift:gif,' : '');
+    return 'https://www.google.com/search?q=' + query + '&tbm=isch&safe=off&pws=0&nfpr=1' + (modAlpha || modBeta ? '&tbs=' : '') + (modAlpha ? 'imgo:1,' : '') + (modBeta ? 'ift:gif' : '');
   },
   duckDuckGo : function(query) {
     return 'http://duckduckgo.com/?q=' + query;
