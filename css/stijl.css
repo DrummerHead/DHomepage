@@ -4,7 +4,7 @@ html {
   background-color: #000;
   font-size: 100%;
   height: 100%;
-  color: #222;
+  color: #333;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -65,9 +65,9 @@ form {
 }
 input,
 button {
-  border: 1px solid #222;
-  background-color: #080808;
-  color: #2a2a2a;
+  border: 1px solid #333;
+  background-color: #111;
+  color: #333;
 }
 input {
   float: left;
@@ -138,14 +138,17 @@ button {
 }
 input:hover,
 button:hover {
-  background-color: #191919;
-  color: #3b3b3b;
-  border-color: #333;
+  background-color: #222;
+  color: #444;
+  border-color: #444;
 }
 input:focus,
 button:focus {
   color: #eee;
   background-color: #000;
+}
+::-webkit-input-placeholder {
+  color: #2a2a2a;
 }
 .go {
 }
@@ -156,66 +159,26 @@ a {
   display: block;
   width: 90%;
   height: 80%;
-  border: 1px solid #222;
+  border: 1px solid #333;
   padding: 5%;
-  color: #222;
+  color: #2a2a2a;
+  background-color: #080808;
   text-decoration: none;
   outline: none;
 }
 a:visited {
-  color: #222;
+  color: #2a2a2a;
 }
 a:hover {
-  color: #333;
   background-color: #111;
-  border-color: #333;
+  color: #333;
+  border-color: #444;
 }
 a:focus,
 button:active {
   color: #777;
   border-color: #777;
   background-color: #000;
-}
-
-@media (max-width: 1280px) {
-  html {
-    color: #333;
-  }
-  a,
-  input,
-  button {
-    border-color: #333;
-  }
-  input,
-  button {
-    color: #333;
-    background-color: #111;
-  }
-  input:hover,
-  button:hover {
-    background-color: #222;
-    color: #444;
-    border-color: #444;
-  }
-  a {
-    color: #2a2a2a;
-    background-color: #080808;
-  }
-  a:visited {
-    color: #2a2a2a;
-  }
-  a:hover {
-    background-color: #111;
-    color: #333;
-    border-color: #444;
-  }
- input:focus {
-    color: #eee;
-    background-color: #000;
-  }
-  ::-webkit-input-placeholder {
-    color: #2a2a2a;
-  }
 }
 
 @media (max-width: 1170px) {
