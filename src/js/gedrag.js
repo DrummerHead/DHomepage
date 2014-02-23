@@ -41,7 +41,7 @@ var engines = {
 }
 
 
-// Get a jQuery object and return a url related to its attributes
+// Get a Node and return a url related to its attributes
 //
 var getUrl = function(el){
   var id = el.id;
