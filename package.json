@@ -1,0 +1,10 @@
+{
+  "name":"dh-home",
+  "version" : "2.0.0",
+  "devDependencies" : {
+    "grunt" : "~0.4.2",
+    "grunt-contrib-cssmin" : "*",
+    "grunt-contrib-uglify" : "*",
+    "grunt-contrib-htmlmin" : "*"
+  }
+}
