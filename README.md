@@ -31,3 +31,5 @@ On Firefox you can even go beyond and go to about:config > browser.newtab.url > 
 ## Customize to your needs
 
 If there are links you'd like to point to other places, or perhaps integrate with other search engines; fork it, change it, upload it and enjoy it!
+
+You can use the files on src/ directly or you can install grunt and use `./make.rb` to compress everything into a single HTML for improved performance.
