@@ -25,7 +25,7 @@
 
 
 <ol>
-  <li class='search focus' data-side='left'>
+  <li class='search focus'>
     <form id='google'>
       <input type='text' placeholder='Google Search' autofocus>
       <div>
@@ -45,7 +45,7 @@
     </form>
   </li>
 
-  <li class='search shrink' data-side='right'>
+  <li class='search shrink'>
     <form id='googleImages'>
       <input type='text' placeholder='Google Image Search'>
       <div>
@@ -65,7 +65,7 @@
     </form>
   </li>
 
-  <li class='search' data-side='left'>
+  <li class='search'>
     <form id='duckDuckGo'>
       <input type='text' placeholder='DuckDuckGo Search'>
       <div>
@@ -75,17 +75,17 @@
     </form>
   </li>
 
-  <li class='search' data-side='right'>
+  <li class='search'>
     <form action='https://www.google.com/searchbyimage' enctype='multipart/form-data' method='GET' class='native'>
       <input type='text' placeholder='Google search by Image URL' name='image_url'>
       <div>
         <button class='go' type='submit'>Go</button>
-        <button class='get' type='button'>Get</button>
+        <button class='get' type='button' disabled>Get</button>
       </div>
     </form>
   </li>
 
-  <li class='search' data-side='left'>
+  <li class='search'>
     <form id='youtube'>
       <input type='text' placeholder='YouTube Search'>
       <div>
@@ -95,7 +95,7 @@
     </form>
   </li>
 
-  <li class='search' data-side='right'>
+  <li class='search'>
     <form id='bingImages'>
       <input type='text' placeholder='Bing Image Search'>
       <div>
@@ -142,8 +142,6 @@
 
 
 <div id='moribus'>
-  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
   <script src='js/gedrag.js'></script>
 
   <script>// Google Analytics
